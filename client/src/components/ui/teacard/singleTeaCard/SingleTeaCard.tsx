@@ -1,14 +1,7 @@
-import SingleTeaCard from '@/components/ui/teacard/singleTeaCard/SingleTeaCard';
+'use client';
+import { useParams } from 'next/navigation';
 
-import { getOneTeaCards } from '@/lib/api';
-
-export default async function SingleTeaPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const { slug } = params;
-  const teaData = await getOneTeaCards(+slug);
+export default async function SingleTeaCard({ slug }: { slug: number }) {
   return (
     <div className="TeaPageConteiner flex-column">
       <div className="TeaPageCard flex-column">

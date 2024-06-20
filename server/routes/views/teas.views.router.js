@@ -28,7 +28,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:teaid', async (req, res) => {
   try {
-    const { user } = res.locals;
+    // const { user } = res.locals;
 
     const { teaid } = req.params;
     const teaData = await Tea.findOne({
@@ -41,11 +41,10 @@ router.get('/:teaid', async (req, res) => {
       // order: [['id', 'ASC']],
     });
 
-    console.log(teaData);
-
     if (teaData) {
       res.send(
-        res.renderComponent(TeaPage, { teaData, title: 'Tea Page', user })
+        { data: teaData }
+        // res.renderComponent(TeaPage, { teaData, title: 'Tea Page', user })
       );
       return;
     }
