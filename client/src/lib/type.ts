@@ -11,6 +11,7 @@ export type Comment = {
   commentText: string;
   userId: number;
   teaId: number;
+  User: User;
 };
 
 export type TeaCard = {
