@@ -3,13 +3,21 @@ import Image from 'next/image';
 
 // const React = require('react');
 import styles from '@/components/ui/teacard/TeaCard.module.css';
+import Link from 'next/link';
 
 export default function TeaCardItem({ teaCard }: { teaCard: TeaCard }) {
   return (
     <div className={`${styles.Container} flex-column`} data-teaid={teaCard.id}>
       <h2>{teaCard.teaName}</h2>
       <div className={styles.ImgContainer}>
-        <Image src={teaCard.teaImg} alt="teaImage" fill />
+        <Image
+          className={styles.img}
+          src={teaCard.teaImg}
+          alt="teaImage"
+          width={220}
+          height={150}
+          priority
+        />
       </div>
       <p>Сорт чая: {teaCard.teaType}</p>
       <p>Регион: {teaCard.teaRegion}</p>
@@ -34,10 +42,10 @@ export default function TeaCardItem({ teaCard }: { teaCard: TeaCard }) {
         ) : (
           <p>♡</p>
         )} */}
-        <a href={`/teas/${teaCard.id}`}>Подробнее</a>
-        <a href={`/teas/${teaCard.id}`}>
+        <Link href={`/teas/${teaCard.id}`}>Подробнее</Link>
+        {/* <a href={`/teas/${teaCard.id}`}>
           Комментарии({teaCard.Comments.length})
-        </a>
+        </a> */}
       </div>
     </div>
   );

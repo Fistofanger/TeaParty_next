@@ -1,10 +1,11 @@
-import Image from 'next/image';
 import TeaCardItem from '@/components/ui/teacard/TeaCard';
 import { TeaCard } from '@/lib/type';
 
 export default async function TeaPages() {
   async function getTeaCards() {
-    const response = await fetch('http://localhost:4000/teas');
+    const response = await fetch('http://localhost:4000/teas', {
+      next: { revalidate: 600 },
+    });
     const { data } = await response.json();
     return data;
   }
