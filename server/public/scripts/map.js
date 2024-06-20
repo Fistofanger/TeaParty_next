@@ -23,7 +23,7 @@ async function initMap() {
       )
   );
 
-  console.log(mapping);
+  // console.log(mapping);
   const map = new ymaps.Map('map', {
     center: [59.913767, 30.350777],
     zoom: 2,
@@ -49,7 +49,7 @@ async function initMap() {
       iconImageSize: [35, 40],
     }
   );
-  console.log(map);
+  // console.log(map);
   mapping.forEach((el) => {
     map.geoObjects.add(el);
   });

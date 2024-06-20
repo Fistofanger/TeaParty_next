@@ -1,13 +1,16 @@
-import { TeaCard } from '@/app/lib/type';
+import { TeaCard } from '@/lib/type';
+import Image from 'next/image';
 
-const React = require('react');
+// const React = require('react');
+import styles from '@/components/ui/teacard/TeaCard.module.css';
 
 export default function TeaCardItem({ teaCard }: { teaCard: TeaCard }) {
   return (
-    <div className="TeaCard flex-column" data-teaid={teaCard.id}>
+    <div className={`${styles.Container} flex-column`} data-teaid={teaCard.id}>
       <h2>{teaCard.teaName}</h2>
-
-      <img src={teaCard.teaImg} alt="teaImage" />
+      <div className={styles.ImgContainer}>
+        <Image src={teaCard.teaImg} alt="teaImage" fill />
+      </div>
       <p>Сорт чая: {teaCard.teaType}</p>
       <p>Регион: {teaCard.teaRegion}</p>
       <div className="btns-tea flex">

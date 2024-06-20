@@ -2,11 +2,7 @@
 @tailwind components;
 @tailwind utilities; */
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+/* 
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -32,11 +28,22 @@
   }
 } */
 
+:root {
+  --bg-green: rgb(64, 138, 64);
+  /* --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255; */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background: rgb(64, 138, 64);
   font-family: 'Miamanueva Regular';
-  width: 1500px;
-  margin: auto;
+  background-color: black;
 }
 
 .flex {
@@ -56,23 +63,18 @@ body {
 
 .grid {
   display: grid;
-
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.TeaCard img,
-.TeaPageCard img {
-  display: block;
-
-  /* Устраняет проблемы с отступами */
-  width: 80%;
-  height: 200px;
-  /* Высота изображения */
-  object-fit: cover;
-  /* Обрезает или масштабирует изображение, чтобы оно заполняло элемент */
+.container {
+  background: var(--bg-green);
+  width: 1500px;
+  min-height: 100vh;
+  margin: auto;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
-.TeaCard,
 .TeaPageCard {
   border-radius: 10px;
   border: 3px solid rgba(0, 0, 255, 0.2);

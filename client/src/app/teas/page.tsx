@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import TeaCardItem from '@/app/ui/teacard/TeaCard';
-import { TeaCard } from '@/app/lib/type';
+import TeaCardItem from '@/components/ui/teacard/TeaCard';
+import { TeaCard } from '@/lib/type';
 
-export default async function Home() {
+export default async function TeaPages() {
   async function getTeaCards() {
     const response = await fetch('http://localhost:4000/teas');
     const { data } = await response.json();
@@ -13,9 +13,11 @@ export default async function Home() {
   return (
     <main className="flex-column">
       <h1>Чайная вечеринка</h1>
-      {teaCards.map((teaCard: TeaCard) => (
-        <TeaCardItem key={teaCard.id} teaCard={teaCard} />
-      ))}
+      <div className="grid">
+        {teaCards.map((teaCard: TeaCard) => (
+          <TeaCardItem key={teaCard.id} teaCard={teaCard} />
+        ))}
+      </div>
     </main>
   );
 }
