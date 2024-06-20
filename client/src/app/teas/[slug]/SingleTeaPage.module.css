@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  min-height: 500px;
+}
+
+.TeaCardContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10%;
+  align-items: center;
+  border-radius: 10px;
+  border: 3px solid rgba(0, 0, 255, 0.2);
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
+  margin: 20px;
+  padding: 20px;
+  background: rgb(98, 180, 98);
+}
+
+.ImgContainer {
+  position: relative;
+  display: block;
+
+  /* Устраняет проблемы с отступами */
+  width: 80%;
+  height: 150px;
+  /* Высота изображения */
+  object-fit: cover;
+  /* Обрезает или масштабирует изображение, чтобы оно заполняло элемент */
+}
+
+.TeaCardContainer p {
+  padding: 0px 20px;
+  /* word-break:; */
+}

@@ -1,14 +1,9 @@
 import TeaCardItem from '@/components/ui/teacard/TeaCard';
+import { getTeaCards } from '@/lib/api';
 import { TeaCard } from '@/lib/type';
 
 export default async function TeaPages() {
-  async function getTeaCards() {
-    const response = await fetch('http://localhost:4000/teas', {
-      next: { revalidate: 600 },
-    });
-    const { data } = await response.json();
-    return data;
-  }
+  
   const teaCards = await getTeaCards();
 
   return (
